@@ -79,7 +79,7 @@ Pastikan kamu sudah menginstal [Node.js](https://nodejs.org/) (disarankan versi 
 
 ## Cara Mengedit Database Supabase
 
-1. Buka dashboard Supabase: https://app.supabase.com/project/hvmjakwrmfcrsgbpyexl
+1. Buka dashboard Supabase:
 2. Masuk dengan akun Supabase-mu.
 3. Gunakan menu **Table Editor** untuk membuat/mengubah tabel.
 4. Gunakan **SQL Editor** untuk menjalankan query, membuat kebijakan **Row Level Security (RLS)**, dan migrasi.
@@ -120,4 +120,4 @@ Proyek ini dibuat untuk keperluan komunitas warga Cirebon. Silakan berkontribusi
 
 ---
 
-**Project PPKN STMIK IKMI CIREBON.**
+**Project PPKN team pengembang 3 STMIK IKMI CIREBON.**
