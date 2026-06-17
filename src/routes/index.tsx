@@ -2,8 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReports, useUsers } from "@/lib/store";
 import { ReportCard } from "@/components/ReportCard";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-cirebon.jpg";
+import heroImg from "@/assets/images.jfif";
 import { Sparkles, Zap, Eye, Trophy, ArrowRight, Shield, MapPin, TrendingUp } from "lucide-react";
+import { CirebonIcon } from "@/components/icons/CirebonIcon";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,7 +49,7 @@ function HomePage() {
         <div className="container relative mx-auto px-4 py-20 md:py-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5" /> Didukung AI Gemini • Khusus untuk Wong Cerbon
+              <Sparkles className="h-3.5 w-3.5" /> Khusus untuk Wong Cerbon
             </div>
             <h1 className="mt-5 font-display text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight">
               Suara Wong Cerbon,
@@ -132,11 +133,17 @@ function HomePage() {
       {/* HOW IT WORKS */}
       <section className="bg-muted/30 border-y border-border py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-              Cara Kerjanya
-            </h2>
-            <p className="mt-3 text-muted-foreground">Tiga langkah memotong birokrasi rumit.</p>
+          <div className="flex items-center justify-between max-w-4xl mx-auto gap-8">
+            <div className="flex-shrink-1">
+              <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
+                Cara Kerjanya
+              </h1>
+              <h3 className="mt-3 text-muted-foreground">Tiga langkah memotong birokrasi rumit.</h3>
+            </div>
+
+            <div className="flex-1">
+              <CirebonIcon size={200} className="text-primary-foreground" />
+            </div>
           </div>
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {[

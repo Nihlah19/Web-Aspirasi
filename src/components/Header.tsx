@@ -1,7 +1,8 @@
 import { Link, useRouter } from "@tanstack/react-router";
 import { useCurrentUser, setCurrentUser } from "@/lib/store";
 import { Button } from "@/components/ui/button";
-import { Megaphone, LogOut, User as UserIcon, Menu, X } from "lucide-react";
+import { CirebonIcon } from "@/components/icons/CirebonIcon";
+import { LogOut, User as UserIcon, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
@@ -21,11 +22,15 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2.5 group">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-primary shadow-elegant">
-            <Megaphone className="h-5 w-5 text-primary-foreground" />
+            <CirebonIcon size={200} className="text-primary-foreground" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-display text-base font-bold tracking-tight">LAPOR WONG CERBON</span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Suara Warga, Aksi Nyata</span>
+            <span className="font-display text-base font-bold tracking-tight">
+              LAPOR WONG CERBON
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              Suara Warga, Aksi Nyata
+            </span>
           </div>
         </Link>
 
@@ -47,7 +52,11 @@ export function Header() {
           {user ? (
             <>
               {user.isAdmin && (
-                <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent/10">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-accent text-accent hover:bg-accent/10"
+                >
                   <Link to="/admin">⚡ Admin</Link>
                 </Button>
               )}
@@ -56,22 +65,36 @@ export function Header() {
                   <Link to="/lapor">+ Buat Laporan</Link>
                 </Button>
               )}
-              <Link to={user.isAdmin ? "/admin" : "/profil"} className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-muted">
+              <Link
+                to={user.isAdmin ? "/admin" : "/profil"}
+                className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-muted"
+              >
                 <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center text-primary-foreground font-semibold text-sm">
                   {user.name[0]}
                 </div>
                 <div className="text-left leading-tight">
                   <div className="text-sm font-medium">{user.name.split(" ")[0]}</div>
-                  <div className="text-xs text-accent font-semibold">{user.isAdmin ? "Administrator" : `${user.points} poin`}</div>
+                  <div className="text-xs text-accent font-semibold">
+                    {user.isAdmin ? "Administrator" : `${user.points} poin`}
+                  </div>
                 </div>
               </Link>
-              <Button variant="ghost" size="icon" onClick={() => { setCurrentUser(null); router.navigate({ to: "/" }); }}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => {
+                  setCurrentUser(null);
+                  router.navigate({ to: "/" });
+                }}
+              >
                 <LogOut className="h-4 w-4" />
               </Button>
             </>
           ) : (
             <>
-              <Button asChild variant="ghost"><Link to="/auth">Masuk</Link></Button>
+              <Button asChild variant="ghost">
+                <Link to="/auth">Masuk</Link>
+              </Button>
               <Button asChild className="bg-gradient-primary shadow-elegant">
                 <Link to="/auth">Daftar Gratis</Link>
               </Button>
@@ -100,16 +123,39 @@ export function Header() {
             <div className="border-t border-border my-2" />
             {user ? (
               <>
-                <Link to="/lapor" onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md bg-gradient-primary text-primary-foreground text-sm font-semibold text-center">+ Buat Laporan</Link>
-                <Link to="/profil" onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md hover:bg-muted text-sm flex items-center gap-2">
+                <Link
+                  to="/lapor"
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-2.5 rounded-md bg-gradient-primary text-primary-foreground text-sm font-semibold text-center"
+                >
+                  + Buat Laporan
+                </Link>
+                <Link
+                  to="/profil"
+                  onClick={() => setOpen(false)}
+                  className="px-3 py-2.5 rounded-md hover:bg-muted text-sm flex items-center gap-2"
+                >
                   <UserIcon className="h-4 w-4" /> {user.name} • {user.points} poin
                 </Link>
-                <button onClick={() => { setCurrentUser(null); setOpen(false); router.navigate({ to: "/" }); }} className="px-3 py-2.5 rounded-md hover:bg-muted text-sm text-left text-destructive flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setCurrentUser(null);
+                    setOpen(false);
+                    router.navigate({ to: "/" });
+                  }}
+                  className="px-3 py-2.5 rounded-md hover:bg-muted text-sm text-left text-destructive flex items-center gap-2"
+                >
                   <LogOut className="h-4 w-4" /> Keluar
                 </button>
               </>
             ) : (
-              <Link to="/auth" onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md bg-gradient-primary text-primary-foreground text-sm font-semibold text-center">Masuk / Daftar</Link>
+              <Link
+                to="/auth"
+                onClick={() => setOpen(false)}
+                className="px-3 py-2.5 rounded-md bg-gradient-primary text-primary-foreground text-sm font-semibold text-center"
+              >
+                Masuk / Daftar
+              </Link>
             )}
           </nav>
         </div>
@@ -125,20 +171,27 @@ export function Footer() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-3">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary">
-              <Megaphone className="h-4 w-4 text-primary-foreground" />
+              <CirebonIcon size={200} className="text-primary-foreground" />
             </div>
             <span className="font-display font-bold">LAPOR WONG CERBON</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
-            Platform pengaduan publik berbasis AI untuk warga Cirebon. Memotong birokrasi rumit lewat transparansi & tekanan publik yang terukur.
+            Platform pengaduan publik berbasis AI untuk warga Cirebon. Memotong birokrasi rumit
+            lewat transparansi & tekanan publik yang terukur.
           </p>
         </div>
         <div>
           <h4 className="font-semibold mb-3 text-sm">Platform</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/laporan">Semua Laporan</Link></li>
-            <li><Link to="/leaderboard">Leaderboard</Link></li>
-            <li><Link to="/anggaran">Anggaran</Link></li>
+            <li>
+              <Link to="/laporan">Semua Laporan</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+            <li>
+              <Link to="/anggaran">Anggaran</Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -151,7 +204,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-4 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Lapor Wong Cerbon — Dibangun untuk warga Cirebon.
+        © {new Date().getFullYear()} Lapor Wong Cerbon-Dibuat oleh tim pengembang 3.
       </div>
     </footer>
   );

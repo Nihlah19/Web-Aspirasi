@@ -54,7 +54,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LAPOR WONG CERBON — Platform Pengaduan Publik Cirebon" },
+      { title: "LAPOR WONG CERBON  Platform Pengaduan Publik Cirebon" },
       {
         name: "description",
         content:
