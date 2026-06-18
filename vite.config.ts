@@ -1,15 +1,8 @@
-import { defineConfig } from "vite";
-import { tanstackViteConfig } from "@tanstack/react-start/vite";
-import { react } from "@vitejs/plugin-react";
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// app.config.ts
 export default defineConfig({
-  plugins: [
-    tanstackViteConfig({
-      // Tambahkan ini agar Nitro tahu harus deploy ke mana
-      server: {
-        preset: "vercel",
-      },
-    }),
-    react(),
-  ],
+  server: {
+    preset: 'vercel', 
+  },
 });
