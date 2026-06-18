@@ -54,11 +54,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LAPOR WONG CERBON  Platform Pengaduan Publik Cirebon" },
+      { title: "LAPOR WONG CERBON — Platform Pengaduan Publik Cirebon" },
       {
         name: "description",
         content:
-          "Lapor masalah kotamu jalan rusak, sampah, drainase. AI menentukan urgensi, transparansi penuh, dapatkan poin & reward.",
+          "Lapor masalah kotamu — jalan rusak, sampah, drainase. AI menentukan urgensi, transparansi penuh, dapatkan poin & reward.",
       },
       { property: "og:title", content: "LAPOR WONG CERBON — Platform Pengaduan Publik Cirebon" },
       {
@@ -71,7 +71,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "Lapor masalah kotamu  jalan rusak, sampah, drainase. AI menentukan urgensi, transparansi penuh, dapatkan poin & reward.",
+          "Lapor masalah kotamu — jalan rusak, sampah, drainase. AI menentukan urgensi, transparansi penuh, dapatkan poin & reward.",
       },
       {
         property: "og:image",
